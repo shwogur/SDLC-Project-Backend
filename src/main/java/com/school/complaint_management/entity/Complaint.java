@@ -37,5 +37,5 @@ public class Complaint {
     private String completionMessage;
 
     @CreationTimestamp
-    private LocalDateTime createdAt;  // String → LocalDateTime 으로 바꿔야 함
+    private LocalDateTime createdAt;
 }
