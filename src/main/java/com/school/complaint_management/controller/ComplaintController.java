@@ -20,31 +20,30 @@ public class ComplaintController {
         return complaintService.createComplaint(complaint);
     }
 
-    // 모든 민원 조회
+    // 전체 조회
     @GetMapping("/")
     public List<Complaint> getAll() {
         return complaintService.getAllComplaints();
     }
 
-    // 특정 민원 조회
+    // 단건 조회
     @GetMapping("/{id}")
-    public Complaint getOne(@PathVariable String id) {
-        Long complaintId = Long.parseLong(id);
-        return complaintService.getComplaint(complaintId);
+    public Complaint getOne(@PathVariable Long id) {
+        return complaintService.getComplaint(id);
     }
 
-    // 민원 업데이트
+    // ✅ 핵심 수정: id + patch 방식
     @PutMapping("/{id}")
-    public Complaint update(@PathVariable String id, @RequestBody Complaint complaint) {
-        Long complaintId = Long.parseLong(id);
-        complaint.setId(complaintId);
-        return complaintService.updateComplaint(complaint);
+    public Complaint update(
+            @PathVariable Long id,
+            @RequestBody Complaint complaint
+    ) {
+        return complaintService.updateComplaint(id, complaint);
     }
 
-    // 민원 삭제
+    // 삭제
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable String id) {
-        Long complaintId = Long.parseLong(id);
-        complaintService.deleteComplaint(complaintId);
+    public void delete(@PathVariable Long id) {
+        complaintService.deleteComplaint(id);
     }
 }

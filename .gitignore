@@ -35,3 +35,9 @@ out/
 
 ### VS Code ###
 .vscode/
+
+# --- OS 숨김 파일 ---
+.DS_Store
+Thumbs.db
+
+application-secret.properties

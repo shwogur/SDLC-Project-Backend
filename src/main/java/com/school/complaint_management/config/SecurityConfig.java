@@ -1,4 +1,4 @@
-package com.school.complaint_management;
+package com.school.complaint_management.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
